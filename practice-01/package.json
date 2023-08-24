@@ -1,0 +1,26 @@
+{
+  "name": "server-newton",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "database": "json-server --watch db.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.5.4",
+    "eslint-config-js-stack": "^1.0.5",
+    "tsx": "^3.12.7",
+    "typescript": "^5.1.6"
+  }
+}
