@@ -1,72 +1,21 @@
-export const Bank = [
-  {
-    compe: '001',
-    shortName: 'BCO DO BRASIL S.A.',
-    document: '00.000.000/0001-91',
-    type: 'Banco Múltiplo',
-    url: 'https://www.bb.com.br',
-  },
-  {
-    compe: '003',
-    shortName: 'BCO DA AMAZONIA S.A.',
-    document: '04.902.979/0001-44',
-    type: 'Banco Comercial',
-    url: 'https://www.bancoamazonia.com.br',
-  },
-  {
-    compe: '004',
-    shortName: 'BCO DO NORDESTE DO BRASIL S.A.',
-    document: '07.237.373/0001-20',
-    type: 'Banco Múltiplo',
-    url: 'https://www.banconordeste.gov.br',
-  },
-  {
-    compe: '007',
-    shortName: 'BNDES',
-    document: '33.657.248/0001-89',
-    type: 'Não informado',
-    url: 'Não informado',
-  },
-  {
-    compe: '010',
-    shortName: 'CREDICOAMO',
-    document: '81.723.108/0001-04',
-    type: 'Não informado',
-    url: 'Não informado',
-  },
-  {
-    compe: '011',
-    shortName: 'C.SUISSE HEDGING-GRIFFO CV S/A',
-    document: '61.809.182/0001-30',
-    type: 'Não informado',
-    url: 'Não informado',
-  },
-  {
-    compe: '012',
-    shortName: 'BANCO INBURSA',
-    document: '04.866.275/0001-63',
-    type: 'Banco Múltiplo',
-    url: 'https://www.bancoinbursa.com',
-  },
-  {
-    compe: '014',
-    shortName: 'STATE STREET BR S.A. BCO COMERCIAL',
-    document: '09.274.232/0001-02',
-    type: 'Banco Comercial',
-    url: 'Não informado',
-  },
-  {
-    compe: '015',
-    shortName: 'UBS BRASIL CCTVM S.A.',
-    document: '02.819.125/0001-73',
-    type: 'Não informado',
-    url: 'Não informado',
-  },
-  {
-    compe: '016',
-    shortName: 'CCM DESP TRÂNS SC E RS',
-    document: '04.715.685/0001-03',
-    type: 'Não informado',
-    url: 'Não informado',
-  },
-];
+import fs from 'node:fs';
+
+type Bank = {
+  ShortName: string;
+  COMPE: string;
+  Document: string;
+  Type: string;
+  Url: string;
+};
+
+export const Bank = () => {
+  const banks = fs.readFileSync('./src/data/banks.json', 'utf8');
+  const parsedBanks = JSON.parse(banks).slice(0, 5);
+  return parsedBanks.map((bank: Bank) => ({
+    shortName: bank.ShortName,
+    compe: bank.COMPE,
+    document: bank.Document,
+    type: bank.Type,
+    url: bank.Url,
+  }));
+};

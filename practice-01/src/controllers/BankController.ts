@@ -3,7 +3,7 @@ import { Request, Response } from 'express';
 
 const BankController = {
   getBanks: (req: Request, res: Response) => {
-    res.render('banks', { banks: Bank });
+    res.render('banks', { banks: Bank() });
   },
 };
 

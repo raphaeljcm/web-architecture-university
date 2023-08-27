@@ -5,8 +5,7 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "dev": "tsx watch src/server.ts",
-    "database": "json-server --watch db.json"
+    "dev": "tsx watch src/app.ts"
   },
   "keywords": [],
   "author": "",
