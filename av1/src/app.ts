@@ -7,7 +7,7 @@ dotenv.config();
 
 mongoose
   .connect(
-    `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@cluster0.r3o9lri.mongodb.net/?retryWrites=true&w=majority`,
+    `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@cluster0.r3o9lri.mongodb.net/Maps?retryWrites=true&w=majority`,
   )
   .then(() => {
     console.log('Connected to MongoDB');

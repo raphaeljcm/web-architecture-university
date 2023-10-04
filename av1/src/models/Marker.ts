@@ -1,7 +1,7 @@
 import { Schema, model } from 'mongoose';
 
-export const Maker = model(
-  'Maker',
+export const Marker = model(
+  'Marker',
   new Schema({
     name: String,
     location: [Number],

@@ -1,9 +1,9 @@
 import { Request, Response } from 'express';
-import { Maker } from '../models/Maker';
+import { Marker } from '../models/Marker';
 
 export async function updateLocation(req: Request, res: Response) {
   try {
-    await Maker.findByIdAndUpdate(req.params.id, req.body);
+    await Marker.findByIdAndUpdate(req.params.id, req.body);
     res.sendStatus(204);
   } catch (error) {
     console.log(error);

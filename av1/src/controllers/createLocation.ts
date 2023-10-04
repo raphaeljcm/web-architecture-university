@@ -1,9 +1,9 @@
 import { Request, Response } from 'express';
-import { Maker } from '../models/Maker';
+import { Marker } from '../models/Marker';
 
 export async function createLocation(req: Request, res: Response) {
   try {
-    const location = await Maker.create(req.body);
+    const location = await Marker.create(req.body);
     res.json(location);
   } catch (error) {
     console.error(error);
